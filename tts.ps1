@@ -1,10 +1,15 @@
+param (
+    [string[]]$allArgs
+)
+
 Add-Type -AssemblyName System.Speech
 $speechSynthesizer = New-Object -TypeName System.Speech.Synthesis.SpeechSynthesizer
 
 $speechSynthesizer.SelectVoice('Microsoft Susan')
 $speechSynthesizer.Rate = 3;
 
-$speechSynthesizer.Speak('Hello, world!')
-$speechSynthesizer.Speak('What''s up?')
+$prompt = $allArgs -join " "
 
-Write-Output 'Done!'
+Write-Output "TTS prompt: ""$prompt"""
+
+$speechSynthesizer.Speak($prompt)
