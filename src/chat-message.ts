@@ -1,10 +1,8 @@
 export class ChatMessage {
-  constructor(username, message) {
-    this.username = username;
-    this.message = message;
+  constructor(private username: string, private message: string) {
   }
 
-  toSSML() {
+  toSSML(): string {
     return `<speak><p>${this.username} says: ${this.message}</p></speak>`;
   }
 }
