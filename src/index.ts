@@ -8,7 +8,6 @@ const chatMessage = process.argv[3];
 if (username && chatMessage) {
   const chatMessageInstance = new ChatMessage(username, chatMessage);
   console.log(chatMessageInstance.toSSML());
-}
-else {
+} else {
   console.error('Please provide a username and a chat message.');
 }
