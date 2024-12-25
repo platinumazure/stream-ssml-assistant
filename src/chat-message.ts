@@ -1,5 +1,5 @@
 const usernamePronunciationMap: Record<string, string> = {
-  platinumazure: '"pl{tIn@m{V@r',
+  platinumazure: '"pl{tIn@m{Z@r',
 };
 
 // Regular expression to capture words
@@ -25,6 +25,6 @@ export class ChatMessage {
     const usernameToRead = this.generatePhoneme(this.username);
     const messageToRead = this.message.replace(wordRegex, word => this.generatePhoneme(word));
 
-    return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en"><p>${usernameToRead} says: ${messageToRead}</p></speak>`;
+    return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en"><voice name="en-GB-SoniaNeural"><p>${usernameToRead} says: ${messageToRead}</p></voice></speak>`;
   }
 }
