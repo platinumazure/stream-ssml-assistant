@@ -1,5 +1,5 @@
 const usernamePronunciationMap: Record<string, string> = {
-  platinumazure: '"pl{tIn@m{Z@r',
+  platinumazure: '"pl{tIn@m"{Z@r',
 };
 
 // Regular expression to capture words
@@ -9,7 +9,7 @@ export class ChatMessage {
   constructor(private username: string, private message: string) {
   }
 
-  generatePhoneme(word: string): string {
+  private generatePhoneme(word: string): string {
     const lowerCaseWord = word.toLowerCase();
 
     if (lowerCaseWord in usernamePronunciationMap) {

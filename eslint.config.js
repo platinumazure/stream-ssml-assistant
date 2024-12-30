@@ -12,4 +12,9 @@ export default antfu({
   rules: {
     'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
   },
+}, {
+  files: ['**/*.test.ts'],
+  rules: {
+    'test/prefer-lowercase-title': 'off',
+  },
 });
