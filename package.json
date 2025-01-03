@@ -1,5 +1,5 @@
 {
-  "name": "platinumazure-tts",
+  "name": "stream-ssml-assistant",
   "type": "module",
   "version": "0.1.0",
   "description": "Utility to generate SSML for chat messages in PlatinumAzure's Twitch stream",
