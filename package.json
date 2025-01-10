@@ -11,7 +11,7 @@
     "tts",
     "twitch-streaming"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
