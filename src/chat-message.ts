@@ -12,6 +12,7 @@
  */
 const usernamePronunciationMap: Record<string, string> = {
   platinumazure: '"pl{tIn@m"{Z@r',
+  thatslothfromnz: 'D{t slAT fr@m nju: "zi:l@nd',
   thebeautyinchaos: 'D@"bju:ti In"keIAs',
 };
 
