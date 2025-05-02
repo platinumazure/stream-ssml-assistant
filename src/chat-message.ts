@@ -12,6 +12,7 @@
  */
 const usernamePronunciationMap: Record<string, string> = {
   platinumazure: '"pl{tIn@m"{Z@r',
+  thebeautyinchaos: 'D@"bju:ti In"keIAs',
 };
 
 // Regular expression to capture words
