@@ -11,14 +11,19 @@
  * ```
  */
 const usernamePronunciationMap: Record<string, string> = {
-  kdrioversion1: 'keI di: ri:@U v@`Sn wVn',
+  kd_rio: 'keI di: ri:@U',
   platinumazure: '"pl{tIn@m"{Z@r',
   thatslothfromnz: 'D{t slAT fr@m nju: "zi:l@nd',
   thebeautyinchaos: 'D@"bju:ti In"keIAs',
 };
 
 // Regular expression to capture words
-const wordRegex = /\w+/g;
+const wordRegex = /\S+/g;
+
+// Curly apostrophe and double quote
+const curlyApostrophe = /’/gu;
+const curlyQuote = /[“”]/gu;
+const ellipsis = /…/gu;
 
 /**
  * Represents a chat message with a username and message content.
@@ -38,11 +43,15 @@ export class ChatMessage {
    * @returns The SSML phoneme representation of the word or the original word if no phoneme is found.
    */
   private generatePhoneme(word: string): string {
+    word = word
+      .replace(curlyApostrophe, '\'')
+      .replace(curlyQuote, '"')
+      .replace(ellipsis, '...');
+
     const lowerCaseWord = word.toLowerCase();
 
     if (lowerCaseWord in usernamePronunciationMap) {
       const ssmlFriendlyPronunciation = usernamePronunciationMap[lowerCaseWord].replace(/"/g, '&quot;');
-
       return `<phoneme alphabet="x-sampa" ph="${ssmlFriendlyPronunciation}">${word}</phoneme>`;
     }
 
